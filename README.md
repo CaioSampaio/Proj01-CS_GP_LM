@@ -1,2 +1,6 @@
-# Proj01-CS_GP_LM
-Projeto 01 Concorrência - 04N11 SO - Caio Sampaio, Guilherme Picoli e Leonardo Matos
+# Projeto 01, O jantar dos Filósofos - 04N11 - SO
+
+## Grupo:
+* Caio Sampaio Oliveira, TIA 32195621;
+* Guilherme Picoli Rodrigues, TIA 32147317;
+* Leonardo Henrique de Oliveira Matos, TIA 32139561.
