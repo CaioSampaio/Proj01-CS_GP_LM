@@ -1,6 +1,7 @@
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthreads.h>
+#include <pthread.h>
 
 #define numero_threads 2
 
@@ -21,7 +22,7 @@ int main(){
     status = pthread_creat(&filosofos[i], NULL, imprimirFilosofo, (void*)i);
     
     if(status != 0){
-      printf("Erro ao criar o filsofo %d\n", status)
+      printf("Erro ao criar o filsofo %d\n", status);
     }
   }
   
