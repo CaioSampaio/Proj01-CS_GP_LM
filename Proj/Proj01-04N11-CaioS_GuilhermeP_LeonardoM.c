@@ -14,7 +14,7 @@ void *imprimirFilosofo(void *tid){
 int main(){
   
   int status;
-  pthreads_t filosofos[numero_threads]
+  pthreads_t filosofos[numero_threads];
   
   for(int i = 0, i < numero_threads; i++){
     
