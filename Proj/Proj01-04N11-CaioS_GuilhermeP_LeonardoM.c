@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <pthreads.h>
 
-#define NUMBER_OF_THREADS 10
+#define NUMBER_OF_THREADS 2
 
 void *print_hello_world(void *tid){
   
@@ -10,12 +10,10 @@ void *print_hello_world(void *tid){
   pthred_exit(NULL);
 }
 
-
-
 int main(){
   
   pthreads_t threads[NUMBER_OF_THREADS]
-    int status, i;
+  int status, i;
   
   for(i=0, i<NUMBER_OF_THREADS; i++){
     
@@ -27,6 +25,6 @@ int main(){
       }
   }
   
-  exit(NULL);
+  return 0;
 }
 
