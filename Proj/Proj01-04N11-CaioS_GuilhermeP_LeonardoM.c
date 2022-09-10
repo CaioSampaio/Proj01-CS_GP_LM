@@ -7,13 +7,15 @@
 
 #define numero_threads 5
 
-int quantidadeGarfos, garfos[] = {0, 0, 0, 0, 0};
+int quantidadeGarfos = 5, garfos[] = {0, 0, 0, 0, 0};
+
 int gerarRandomico (){
 
-return rand()%10;
+  return rand()%5;
 }
 
 void pensar(int i){
+
   printf("\nO filósofo %d está pensado", i);
   //Timer Randômico
   sleep(gerarRandomico());
@@ -28,6 +30,8 @@ void comer (int i){
       garfosNaMao = garfosNaMao + 1;
     }
   }
+
+  printf("\nO filósofo %d tem %d garfos", i, garfosNaMao);
 
   if (garfosNaMao == 2){
 
@@ -77,14 +81,29 @@ int main(){
 
   for(int i = 0; i < numero_threads; i++){
 
-    printf("Main here. Creating thread %d\n", i);
     //status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,(void*)(intptr_t)i);
     status = pthread_create(&filosofos[i], NULL, acoesNaMesa, (void*)(intptr_t)i);
 
     if(status != 0){
-      printf("Erro ao criar o filsofo %d\n", status);
+        printf("O filsofo recusou-se a sentar na mesa %d\n", status);
+    } else{
+        printf("O filsofo %d sentou-se a mesa\n", i);
     }
   }
+
+  for(int i = 0; i < numero_threads; i++){
+
+    status = pthread_join(&filosofos[i], NULL);
+
+    if(status != 0){
+      printf("O filsofo morreu à mesa %d\n", status);
+    }
+  }
+
+  //for(int i = 0; i < numero_threads; i++){
+
+    //acoesNaMesa(void *arg);
+  //}
 
   return 0;
 }
