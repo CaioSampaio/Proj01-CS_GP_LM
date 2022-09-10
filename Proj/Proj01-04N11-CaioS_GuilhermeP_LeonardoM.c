@@ -1,7 +1,7 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <stdint.h>
 
 #define numero_threads 10
 
@@ -71,7 +71,7 @@ int main(){
   for(int i = 0; i < numero_threads; i++){
     
     printf("Main here. Creating thread %d\n", i);
-    status = pthread_create(&filosofos[i], NULL, imprimirFilosofo, (void*)i );
+    status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,(void*)(intptr_t)i);
     // status = pthread_creat(&filosofos[i], NULL, acoesNaMesa, (void*)i);
     
     if(status != 0){
@@ -81,4 +81,3 @@ int main(){
   
   return 0;
 }
-
