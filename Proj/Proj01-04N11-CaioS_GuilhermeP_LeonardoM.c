@@ -58,7 +58,7 @@ void comer (int i){
 }
 
 void *acoesNaMesa(void *arg){
-  int i = (int)arg;
+  int i = (intptr_t)arg;
 
   for (;;){
     pensar(i);
@@ -93,7 +93,7 @@ int main(){
 
   for(int i = 0; i < numero_threads; i++){
 
-    status = pthread_join(&filosofos[i], NULL);
+    status = pthread_join(filosofos[i], NULL);
 
     if(status != 0){
       printf("O filsofo morreu à mesa %d\n", status);
