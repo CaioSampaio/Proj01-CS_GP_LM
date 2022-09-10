@@ -37,6 +37,13 @@ void comer (int i){
       }
     }
     
+  } else{
+     for (int j = 0; j < quantidadeGarfos; j++){
+      if (garfos[j] == i){
+        garfos[j] = 0;
+        garfosNaMao = garfosNaMao - 1;
+      }
+    }
   }
 }
 
