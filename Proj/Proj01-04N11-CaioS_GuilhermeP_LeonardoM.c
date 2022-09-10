@@ -57,7 +57,7 @@ void *acoesNaMesa(void *tid, int i){
 
 */
 
-void *imprimirFilosofo(int tid){
+void *imprimirFilosofo(void* tid){
   
   printf("O filósifo %p\n", tid);
   pthread_exit(NULL);
@@ -71,7 +71,7 @@ int main(){
   for(int i = 0; i < numero_threads; i++){
     
     printf("Main here. Creating thread %d\n", i);
-    status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,i );
+    status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,(void*)i );
     // status = pthread_creat(&filosofos[i], NULL, acoesNaMesa, (void*)i);
     
     if(status != 0){
