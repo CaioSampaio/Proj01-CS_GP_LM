@@ -3,16 +3,16 @@
 #include <pthread.h>
 #include <stdint.h>
 
-#define numero_threads 10
+#define numero_threads 5
 
 int quantidadeGarfos, garfos[] = {0, 0, 0, 0, 0};
 
-void pensar(int *i){
+void pensar(int i){
   printf("O filósofo %d está pensado", i);
   //Timer Randômico
 }
 
-void comer (int *i){
+void comer (int i){
   int garfosNaMao = 0;
   
   for (int j = 0; j < quantidadeGarfos; j++){
@@ -45,8 +45,8 @@ void comer (int *i){
   }
 }
 
-void *acoesNaMesa(void *arg){
-  int *i = (int *)arg;
+void *acoesNaMesa(int i){
+ // int *i = (int *)arg;
 
   for (;;){
     pensar(i);
@@ -71,7 +71,7 @@ int main(){
     
     printf("Main here. Creating thread %d\n", i);
     //status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,(void*)(intptr_t)i);
-    status = pthread_create(&filosofos[i], NULL, acoesNaMesa, (void*)(intptr_t)i);
+    status = pthread_create(&filosofos[i], NULL, acoesNaMesa, i);
     
     if(status != 0){
       printf("Erro ao criar o filsofo %d\n", status);
