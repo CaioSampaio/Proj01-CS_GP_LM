@@ -1,3 +1,29 @@
+/*
+  Projeto 01, O jantar dos Filósofos - 04N11 - SO
+  
+  Nomes:
+   Caio Sampaio Oliveira, TIA:32195621;
+   Guilherme Picoli Rodrigues, TIA:32147317;
+   Leonardo Henrique de Oliveira Matos, TIA:32139561.
+   
+  Pré-requisito para a compilação:
+   O programa é compatível o Sistema Operacional Linux;
+   Foi utilizado as distribuições Ubuntu 20 e Ubuntu 16 para o desenvolvimento do programa.
+   
+  Como compilar:
+   Para compilar o programa "Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c" devemos utilizar o compilador C GCC e o seguinte comando no terminal: gcc Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c -o Proj01-04N11-CaioS_GuilhermeP_LeonardoM.out
+   
+  Como executar o programa:
+   Para executar o programa "Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c" devemos utilizar o seguinte comando o terminal: ./Proj01-04N11-CaioS_GuilhermeP_LeonardoM.out 
+
+  Referências Bibliográficas:
+  
+   TANENBAUM, A. S. Sistemas Operacionais Modernos, 2ª Ed. São Paulo: Pearson Prentice Hall, 2005.
+   
+   VARUN. POSIX: How to create a thread | pthread_create() example & Tutorial. thisPointer, Nova Delhi, India, ago. de 2020. Disponível em: https://thispointer.com/posix-how-to-create-a-thread-pthread_create-example-tutorial/. Acesso em: 10 de Setembro de 2022.
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -66,14 +92,6 @@ void *acoesNaMesa(void *arg){
   }
 }
 
-/*
-void *imprimirFilosofo(void* tid){
-
-  printf("O filósifo %p\n", tid);
-  pthread_exit(NULL);
-}
-*/
-
 int main(){
 
   int status;
@@ -81,7 +99,6 @@ int main(){
 
   for(int i = 0; i < numero_threads; i++){
 
-    //status = pthread_create(&filosofos[i], NULL, imprimirFilosofo,(void*)(intptr_t)i);
     status = pthread_create(&filosofos[i], NULL, acoesNaMesa, (void*)(intptr_t)i);
 
     if(status != 0){
@@ -99,11 +116,6 @@ int main(){
       printf("O filsofo morreu à mesa %d\n", status);
     }
   }
-
-  //for(int i = 0; i < numero_threads; i++){
-
-    //acoesNaMesa(void *arg);
-  //}
 
   return 0;
 }
