@@ -2,14 +2,21 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <stdint.h>
+#include <unistd.h>
+#include <time.h>
 
 #define numero_threads 5
 
 int quantidadeGarfos, garfos[] = {0, 0, 0, 0, 0};
+int gerarRandomico (){
+
+return rand()%10;
+}
 
 void pensar(int i){
   printf("\nO filósofo %d está pensado", i);
   //Timer Randômico
+  sleep(gerarRandomico());
 }
 
 void comer (int i){
@@ -27,6 +34,7 @@ void comer (int i){
     printf("\nO filósofo %d está comendo", i);
 
     //Timer Randômico
+    sleep(gerarRandomico());
 
     for (int j = 0; j < quantidadeGarfos; j++){
       if (garfos[j] == i){
