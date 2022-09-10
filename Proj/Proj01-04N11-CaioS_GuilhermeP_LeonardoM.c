@@ -42,7 +42,7 @@ int gerarRandomico (){
 
 void pensar(int i){
 
-  printf("\nO filósofo %d está pensado", i);
+  printf("\nO filósofo %d está pensado", i+1);
   //Timer Randômico
   sleep(gerarRandomico());
 }
@@ -57,11 +57,9 @@ void comer (int i){
     }
   }
 
-  printf("\nO filósofo %d tem %d garfos", i, garfosNaMao);
-
   if (garfosNaMao == 2){
 
-    printf("\nO filósofo %d está comendo", i);
+    printf("\nO filósofo %d está comendo", i+1);
 
     //Timer Randômico
     sleep(gerarRandomico());
