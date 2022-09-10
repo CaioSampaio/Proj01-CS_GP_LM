@@ -7,7 +7,7 @@
 
 #define numero_threads 5
 
-int quantidadeGarfos = 5, garfos[] = {0, 0, 0, 0, 0};
+int quantidadeGarfos = 2, garfos[] = {0, 0, 0, 0, 0};
 
 int gerarRandomico (){
 
