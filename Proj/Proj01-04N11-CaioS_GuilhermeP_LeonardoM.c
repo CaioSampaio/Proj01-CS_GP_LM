@@ -33,7 +33,7 @@
 
 #define numero_threads 5
 
-int quantidadeGarfos = 2, garfos[] = {0, 0, 0, 0, 0};
+int quantidadeGarfos = 5, garfos[] = {0, 0, 0, 0, 0};
 
 int gerarRandomico (){
 
@@ -50,11 +50,28 @@ void pensar(int i){
 void comer (int i){
   int garfosNaMao = 0;
 
-  for (int j = 0; j < quantidadeGarfos; j++){
+  /*for (int j = 0; j < quantidadeGarfos; j++){
     if (garfos[j] == 0){
       garfos[j] = i;
       garfosNaMao = garfosNaMao + 1;
     }
+  }*/
+  
+  if (garfos[i] == 0){
+      garfos[i] = i;
+      garfosNaMao = garfosNaMao + 1;
+  }
+  
+  if ((i - 1) == (-1)){
+      if (garfos[quantidadeGarfos - 1] == 0){
+        garfos[quantidadeGarfos - 1] = i;
+        garfosNaMao = garfosNaMao + 1;
+      }
+  } else {
+      if (garfos[i - 1] == 0){
+        garfos[i - 1] = i;
+        garfosNaMao = garfosNaMao + 1;
+      }
   }
 
   if (garfosNaMao == 2){
