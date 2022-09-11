@@ -1,10 +1,12 @@
 # Projeto 01, O jantar dos Filósofos:
 
-## Grupo:
+## O Grupo:
 
 * Caio Sampaio Oliveira, TIA 32195621;
 * Guilherme Picoli Rodrigues, TIA 32147317;
 * Leonardo Henrique de Oliveira Matos, TIA 32139561.
+
+## O Programa:
 
 ### Pré-requisito para a compilação:
 
@@ -16,7 +18,7 @@ Foi utilizado as distribuições Ubuntu 20 e Ubuntu 16 para o desenvolvimento do
 Para compilar o programa "Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c" devemos utilizar o compilador C GCC e o seguinte comando no terminal:
 gcc Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c -o Proj01-04N11-CaioS_GuilhermeP_LeonardoM.out
 
-### Como executar o programa
+### Como executar o programa:
 
 Para executar o programa "Proj01-04N11-CaioS_GuilhermeP_LeonardoM.c" devemos utilizar o seguinte comando o terminal:
 ./Proj01-04N11-CaioS_GuilhermeP_LeonardoM.out
