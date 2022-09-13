@@ -54,8 +54,8 @@ void pensar(int i){
 
     printf("\nO filósofo %d está pensado", i+1);
 
-    //Timer Randômico
-    sleep(gerarRandomico());
+    //Timer Fixo de 5 segundos
+    sleep(5);
 }
 
 // Filósofo realiza a ação de tentar comer
@@ -87,8 +87,8 @@ void comer (int i){
 
         printf("\nO filósofo %d está comendo", i+1);
 
-        //Timer Randômico
-        sleep(gerarRandomico());
+        //Timer Fixo de 5 segundos
+        sleep(5);
 
         for (int j = 0; j < quantidadeGarfos; j++){
             if (garfos[j] == i){
@@ -111,7 +111,7 @@ void comer (int i){
 // Define as ações de cada filósofo na mesa
 void *acoesNaMesa(void *arg){
     int i = (intptr_t)arg;
-
+    
     for (;;){
         pensar(i);
         comer(i);
@@ -138,9 +138,9 @@ int main(){
     }
 
     for(int i = 0; i < numero_threads; i++){
-
+	
         status = pthread_join(filosofos[i], NULL);
-
+        
         if(status != 0){
             printf("O filsofo morreu à mesa %d\n", status);
         }
