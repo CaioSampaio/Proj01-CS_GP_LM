@@ -73,7 +73,7 @@ void comer (int i){
     if ((i - 1) == (-1)){
         //Tenta pegar o garfo da esquerda (que pertence ao filósofo 5)
         if (garfos[quantidadeGarfos - 1] == 0){
-            garfos[quantidadeGarfos - 1] = i; //Reserva o garfo da esquerda com o seu id
+            garfos[quantidadeGarfos - 1] = i; //Reserva o garfo da esquerda com o seu ID
             garfosNaMao = garfosNaMao + 1; //Contabiliza o nº de garfos na mão
         }
     } else {
@@ -84,7 +84,7 @@ void comer (int i){
         }
     }
 
-    //Verfica se o filósofo tem dois garfos (o da esquerda e o da direita)
+    //Verfica se o filósofo tem dois garfos (esquerda e direita)
     if (garfosNaMao == 2){
 
         printf("\nO filósofo %d está comendo", i+1);
@@ -116,7 +116,7 @@ void comer (int i){
 
 // Define as ações de cada filósofo na mesa
 void *acoesNaMesa(void *arg){
-    int i = (intptr_t)arg;
+    int i = (intptr_t)arg; //ID de cada filósofo
     
     //Cada filósofo executa as ações de pensar e comer indefinidamente
     for (;;){
@@ -131,7 +131,7 @@ void *acoesNaMesa(void *arg){
 int main(){
 
     int status;
-    pthread_t filosofos[numero_threads];
+    pthread_t filosofos[numero_threads]; //Vetor de filósofos como Threads
 
     //Cria os filósofos com threads
     for(int i = 0; i < numero_threads; i++){
