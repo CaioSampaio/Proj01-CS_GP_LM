@@ -22,8 +22,9 @@
 
     VARUN. POSIX: How to create a thread | pthread_create() example & Tutorial. thisPointer, Nova Delhi, India, ago. de 2020. Disponível em: <https://thispointer.com/posix-how-to-create-a-thread-pthread_create-example-tutorial/>. Acesso em: 10 de Setembro de 2022.
 
-    BIBI, Kalsoom. Sleep function in C. Linux Hint LLC, Sunnyvale, USA, out. de 2021. Disponível em: <https://linuxhint.com/sleep-function-c/>. Acesso em: 10 de Setembro de 2022.
+    BIBI, Kalsoom. Sleep function in C. Linux Hint LLC, Sunnyvale, EUA, out. de 2021. Disponível em: <https://linuxhint.com/sleep-function-c/>. Acesso em: 10 de Setembro de 2022.
 
+    THE OPEN GROUP; IEEE. pthread_join. The Open Group Base Specifications Issue 7, 2018 edition & IEEE Std 1003.1-2017. IEEE e The Open Group, EUA, fev. de 2018. Disponível em: <https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_join.html>. Acesso em: 10 de Setembro de 2022.
 */
 
 #include <stdio.h>
@@ -84,7 +85,7 @@ void comer (int i){
         }
     }
 
-    //Verfica se o filósofo tem dois garfos (esquerda e direita)
+    //Verifica se o filósofo tem dois garfos (esquerda e direita)
     if (garfosNaMao == 2){
 
         printf("\nO filósofo %d está comendo", i+1);
@@ -141,9 +142,9 @@ int main(){
 
         //Verifica se a criação foi bem-sucedida
         if(status != 0){
-            printf("O filsofo recusou-se a sentar na mesa %d\n", status);
+            printf("O filósofo recusou-se a sentar na mesa %d\n", status);
         } else{
-            printf("O filsofo %d sentou-se a mesa\n", i);
+            printf("O filósofo %d sentou-se à mesa\n", i);
         }
     }
 
@@ -155,7 +156,7 @@ int main(){
         
         //Verifica se a operação foi bem-sucedida
         if(status != 0){
-            printf("O filsofo morreu à mesa %d\n", status);
+            printf("O filósofo morreu à mesa %d\n", status);
         }
     }
 
